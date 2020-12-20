@@ -15,6 +15,20 @@ class Controller{
         let metadataParser = await new MetadataParser();
         let metadata = await metadataParser.readFile();
         //filter dataObject to contain only metaData entries
+
+        dataObject.filter((item)=>{
+           //search product name  in meta data entries
+           for(let metadataEntry of metadata){
+                if(item.product.search(metadataEntry) >=0){
+                    console.log('***************************')
+                    console.log('match!!!!');
+                    console.log(item.product + ':::' + metadataEntry);
+                    console.log('**************************');
+                    return true;
+                }
+           }
+           return false;
+        });
         
 
     

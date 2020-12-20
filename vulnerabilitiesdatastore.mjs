@@ -6,18 +6,23 @@
 class VulnerabilitiesDataStore{
 
     constructor(){
-        this._container = new Set();
+        this._container = new Array();
 
     }
 
     add(product, desc,cvss,number)
     {
         let dataItem = new DataItem(product,desc,cvss,number);
-        this._container.add(dataItem);
+        this._container.push(dataItem);
     }
 
     size(){
         return this._container.size;
+    }
+
+    filter(fn){
+        this._container.filter(fn);
+
     }
 }
 
