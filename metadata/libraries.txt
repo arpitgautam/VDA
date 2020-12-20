@@ -1,0 +1,9 @@
+jboss
+corretto
+jdk
+apache
+IIS
+.net
+jetty
+openfire
+openssl
